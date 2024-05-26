@@ -20,9 +20,8 @@ const MagicButton = ({
     >
       <span className="absolute inset-[-1000%]" />
 
-      {/* remove px-3 py-1, add px-5 gap-2 */}
       <span
-        className={`inline-flex h-full w-full cursor-pointer items-center justify-center border border-sahara rounded-lg
+        className={`inline-flex h-full w-full cursor-pointer items-center justify-center border border-codgray rounded-lg
             px-2 text-xs md:text-sm font-medium text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
       >
         {position === "left" && icon}

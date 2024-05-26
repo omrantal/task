@@ -1,11 +1,11 @@
+"use client"
+
 import { useState } from "react";
 import { IconCopy } from "@tabler/icons-react";
 
-import Lottie from "react-lottie";
 import { cn } from "@/utils/cn";
 
 import { BackgroundGradientAnimation } from "./GradientBg";
-import animationData from "@/utils/confetti.json";
 import MagicButton from "./MagicButton";
 
 export const BentoGrid = ({
@@ -32,7 +32,6 @@ export const BentoGridItem = ({
   id,
   title,
   description,
-  //   remove unecessary things here
   img,
   imgClassName,
   titleClassName,
@@ -52,15 +51,6 @@ export const BentoGridItem = ({
 
   const [copied, setCopied] = useState(false);
 
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   const handleCopy = () => {
     const text = "ican.aleppo@gmail.com";
     navigator.clipboard.writeText(text);
@@ -70,19 +60,16 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border border-sahara group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+        "row-span-1 relative overflow-hidden rounded-3xl border border-codgray group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
         className
       )}
       style={{
-        //   add these two
-        //   you can generate the color from here https://cssgradient.io/
         background: "rgb(11,10,9)",
         backgroundColor:
           "linear-gradient(90deg, rgba(11,10,9,1) 0%, rgba(147,146,139,1) 100%);",
       }}
     >
-      {/* add img divs */}
-      <div className={`${id === 6 && "flex justify-center"} h-full`}>
+      <div className={`h-full ${id === 6 ? 'flex justify-center' : ''}`}>
         <div className="w-full h-full absolute">
           {img && (
             <img
@@ -98,14 +85,12 @@ export const BentoGridItem = ({
             <img
               src={spareImg}
               alt={spareImg}
-              //   width={220}
               className="object-cover object-center w-full h-full"
             />
           )}
         </div>
 
         {id === 6 && (
-          // add background animation , remove the p tag
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
           </BackgroundGradientAnimation>
@@ -115,8 +100,6 @@ export const BentoGridItem = ({
           className={cn(
             titleClassName,
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10",
-            id === 1 && 'justify-start',
-            id === 5 && 'justify-start',
           )}
         >
           <div className={`font-sans text-lg lg:text-3xl max-w-full font-bold z-10 whitespace-pre-line ${id === 1 && 'text-codgray'}`}>
@@ -127,11 +110,8 @@ export const BentoGridItem = ({
             {description}
           </div>
 
-          {/* Tech stack list div */}
-
           {id === 3 && (
             <div className="flex gap-1 lg:gap-3 w-fit absolute -right-3 lg:-right-2">
-              {/* tech stack lists */}
               <div className="flex flex-col gap-3">
                 {leftLists.map((item, i) => (
                   <span
@@ -162,11 +142,6 @@ export const BentoGridItem = ({
 
           {id === 6 && (
             <div className="mt-5 relative">
-              <div className={`absolute -bottom-5 right-0 block`}>
-                <img src="/confetti.gif" alt="confetti" />
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
-
               <MagicButton
                 title={copied ? "Email is Copied!" : "Copy our email address"}
                 icon={<IconCopy />}

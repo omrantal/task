@@ -1,4 +1,3 @@
-// Input component extends from shadcnui - https://ui.shadcn.com/docs/components/input
 "use client";
 
 import * as React from "react";
@@ -122,18 +121,4 @@ const BottomGradient = () => {
   );
 };
 
-const LabelInputContainer = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
-  );
-};
-
-export { Input, Select, BottomGradient, LabelInputContainer };
+export { Input, Select, BottomGradient };

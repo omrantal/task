@@ -1,16 +1,11 @@
 "use client";
+
 import { cn } from "@/utils/cn";
 import { useEffect, useRef, useState } from "react";
 
 export const BackgroundGradientAnimation = ({
   gradientBackgroundStart = "#93928b",
   gradientBackgroundEnd = "#0b0a09",
-  //firstColor = "18, 113, 255",
-  //secondColor = "221, 74, 255",
-  //thirdColor = "100, 220, 255",
-  //fourthColor = "200, 50, 50",
-  //fifthColor = "180, 180, 50",
-  //pointerColor = "140, 100, 255",
   size = "80%",
   blendingValue = "hard-light",
   children,
@@ -20,12 +15,6 @@ export const BackgroundGradientAnimation = ({
 }: {
   gradientBackgroundStart?: string;
   gradientBackgroundEnd?: string;
-  //firstColor?: string;
-  //secondColor?: string;
-  //thirdColor?: string;
-  //fourthColor?: string;
-  //fifthColor?: string;
-  //pointerColor?: string;
   size?: string;
   blendingValue?: string;
   children?: React.ReactNode;
@@ -48,12 +37,6 @@ export const BackgroundGradientAnimation = ({
       "--gradient-background-end",
       gradientBackgroundEnd
     );
-    //document.body.style.setProperty("--first-color", firstColor);
-    //document.body.style.setProperty("--second-color", secondColor);
-    //document.body.style.setProperty("--third-color", thirdColor);
-    //document.body.style.setProperty("--fourth-color", fourthColor);
-    //document.body.style.setProperty("--fifth-color", fifthColor);
-    //document.body.style.setProperty("--pointer-color", pointerColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
   }, []);

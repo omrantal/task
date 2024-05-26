@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
 
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 
@@ -94,7 +94,6 @@ export function HoverBorderGradient({
         }}
         transition={{ ease: "linear", duration: duration ?? 1 }}
       />
-      {/*<div className="absolute z-1 flex-none inset-[2px] rounded-[100px]" />*/}
     </Tag>
   );
 }

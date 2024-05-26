@@ -4,7 +4,6 @@ import logo from '@/public/mini_logo.jpg'
 import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3DCard";
-import Link from "next/link";
 
 const Logo = () => {
   return (

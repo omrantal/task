@@ -88,13 +88,9 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className="w-[200px] max-w-full relative flex justify-center cursor-pointer rounded-2xl border flex-shrink-0 bg-codgray/50 border-sahara px-4 py-4 md:w-[260px]"
-            //style={{
-            //  background:
-            //    "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
-            //}}
             key={item.brand}
           >
             <blockquote className="">
@@ -152,3 +148,4 @@ export const contact = [
       brand: "ican.aleppo@gmail.com"
     },
   ];
+  
